@@ -1,0 +1,78 @@
+.example-container{
+    height: 100%;
+}
+
+.mat-d .sidenav-content button{
+    display: block ;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+.routeActive.active{
+    color: #15b6a8;
+    font-size:larger !important;
+}
+.compose{
+    border: none;
+    background:#15b6a8 ;
+    width: 100%;
+    margin:30px 15px;
+    color: white;
+    padding: 15px 0px;
+    border-radius: 4px;
+}
+.mat-button{
+   color: #809Ab6;
+    font-size: 14px !important;
+    border: none;
+    position: relative !important;
+    bottom: 8px !important;
+
+} 
+
+ :host  ::ng-deep mat-drawer-content {
+      overflow-x: hidden !important;
+  }
+
+.container {
+    width: 100%;
+  }
+ ul li{
+      list-style: none;
+      line-height: 3;
+  }
+  
+  .mat-drawer{
+    width: 250px !important;
+  }
+ul{
+    list-style-position: inside;
+    padding-left: 0;
+}
+ 
+.circle{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0px 10px 0px 0px; 
+}
+  .labels button{
+    display: inline-block !important;
+    margin: 6px;
+    background: white;
+    border: none;
+    box-shadow: 0px 0px 3px lightgrey;
+    padding: 6px 3px;
+    width: 100%;
+  }
+mat-icon ,i{
+    font-size: 20px;
+    width: 30px;
+}
+.inbox{
+    line-height: 1;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+}

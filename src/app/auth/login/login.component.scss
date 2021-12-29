@@ -1,0 +1,101 @@
+.header {
+  color: var(--medifit-primary);
+  font-size: 32px !important;
+  font-weight: 600 !important;
+}
+
+.mat-form-field {
+  width: 100% !important;
+}
+
+.medifit-primary-button {
+  font-size: 24px !important;
+  color: white !important;
+  background-color: #1F3864 !important;
+  padding: 13px 50px !important;
+  border-radius: 4px !important;
+}
+
+button:disabled {
+  opacity: 0.7;
+}
+
+.split-screen {
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: lightgray;
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: lightgray;
+}
+
+.left {
+  height: 200px;
+}
+
+.left,
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  background-image: url('../../../assets/images/login.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#overlay-div {
+  height: 200px;
+  position: relative;
+  width: 100%;
+}
+
+.right section {
+  width: 350px;
+}
+
+.text-danger {
+  text-align: left;
+}
+
+.right .copy {
+  text-align: center;
+}
+
+@media screen and (min-width:900px) {
+  .split-screen {
+    flex-direction: row;
+    height: 100vh;
+  }
+
+  .left {
+    display: flex;
+    width: 50%;
+    height: 100%;
+  }
+
+  .right {
+    display: flex;
+    height: 100%;
+    overflow: scroll;
+    width: 50%;
+  }
+
+  #overlay-div {
+    height: 100%;
+  }
+}

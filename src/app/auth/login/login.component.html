@@ -1,0 +1,52 @@
+<div class="split-screen">
+    <div class="left">
+      <div id="overlay-div"></div>
+    </div>
+    <div class="right">
+      <section>
+        <div class="copy">
+          <h1 class="text-center header">Login</h1>
+          <form [formGroup]="loginForm" (ngSubmit)='onSubmit(loginForm)' #triggerForm="ngForm"
+            (keydown.enter)="triggerSubmit()">
+            <div class="form-group">
+              <mat-form-field appearance="legacy" hideRequiredMarker=true>
+                <input matInput type='email' name="email" formControlName="email" placeholder="E-mail"
+                  pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$" required>
+                <mat-icon matSuffix>perm_identity</mat-icon>
+              </mat-form-field>
+              <div *ngIf="(loginFormControl.email.touched ) && loginFormControl.email.errors?.required">
+                <p class="text-danger">Email Id is required</p>
+              </div>
+              <p *ngIf="loginFormControl.email.touched && (loginFormControl.email.errors?.pattern || loginFormControl.email.errors?.email)"
+                class="text-danger">This is invalid email address!</p>
+            </div>
+  
+            <div class="form-group">
+              <mat-form-field appearance="legacy" hideRequiredMarker=true>
+                <input matInput type="password" name="password" formControlName="password" placeholder="Password"
+                  minlength="8" maxlength="15" required>
+                <mat-icon matSuffix>lock</mat-icon>
+  
+              </mat-form-field>
+              <div *ngIf="(loginFormControl.password.touched || submitted) && loginFormControl.password.errors?.required">
+                <p class="text-danger">Password is required</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="d-flex justify-content-center mt-4">
+                <button mat-button type="submit" [disabled]="loginForm.invalid"
+                  class="medifit-primary-button">Login</button>
+                <div class="spinner-border auth-loader" role="status" *ngIf='submitted'>
+                  <span class="sr-only"></span>
+                </div>
+              </div>
+            </div>
+          </form>
+  
+        </div>
+        <h4 class="text-center mt-5">Don't have an account ? <a [routerLink]="['/auth/register']"
+            class="auth-link">Register</a></h4>
+      </section>
+    </div>
+  </div>
+  

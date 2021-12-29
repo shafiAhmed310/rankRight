@@ -1,0 +1,31 @@
+<mat-toolbar>
+    <mat-toolbar-row class="justify-content-between">
+        <button class="btn menu" (click)="toggleSidebar()"><mat-icon>menu</mat-icon></button> &nbsp;
+      <input  type="search" placeholder="search for something.." class="search" >
+    <div class="row mr-2 ml-auto">
+        <div>
+            <ul>
+                <li>
+                    <mat-icon [matBadge]="count"> mail_outline</mat-icon>
+                    <mat-icon matBadge="15">notifications</mat-icon>
+                   
+                </li>
+            </ul>
+        </div>
+      
+        <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
+                <mat-icon class="m-0">arrow_right_alt</mat-icon>
+              </div>
+              <div>
+                <button type="button"  class="btn logout" data-toggle="tooltip " data-placement="bottom" title="Logout" (click)="logout()">
+                    Log out
+                   </button> 
+              </div>
+       
+         
+          </div>
+</div>
+    </mat-toolbar-row>
+   
+</mat-toolbar>

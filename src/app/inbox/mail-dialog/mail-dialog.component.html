@@ -1,0 +1,52 @@
+
+
+<form [formGroup]="sendMail" #form="ngForm" (ngSubmit)="onAddEmployee(sendMail)">
+    <div mat-dialog-content>
+        <h3 class="text-center text-bold">
+  New Message
+        </h3>
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label>from</mat-label>
+                <input type="text" matInput formControlName="from">
+            </mat-form-field>
+            <p *ngIf="sendMail.get('from').touched && (sendMail.get('from').errors?.pattern)"
+                class="text-danger">This is invalid email id</p>
+        </div>
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label>to</mat-label>
+                
+                <input type="text" matInput formControlName="to">
+            </mat-form-field>
+            <p *ngIf="sendMail.get('to').touched && (sendMail.get('to').errors?.pattern)"
+                class="text-danger">This is invalid email id</p>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label>cc</mat-label>
+                <input type="email" matInput formControlName="cc">
+            </mat-form-field>
+            <p *ngIf="sendMail.get('cc').touched && (sendMail.get('cc').errors?.email || sendMail.get('to').errors?.pattern)"
+                class="text-danger">This is invalid email id</p>
+        </div>
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label>subject</mat-label>
+                <input type="text" matInput formControlName="subject">
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+                <textarea  style="border-bottom: none !important;" matInput cols="3" rows="5" formControlName="body" placeholder="body..."></textarea>
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions class="ml-5 pl-5">
+        <button class="ml-5" mat-button [mat-dialog-close]="true">Close</button>
+        <button   mat-button style="background-color: #1D447D; color: white;" class="btn tech-save ml-3" type="submit"
+        > Send</button>
+    </div>
+</form>
+<!-- [disabled]="sendMail.invalid" -->
